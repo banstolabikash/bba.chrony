@@ -1,13 +1,14 @@
 services:
   chrony:
-    build:
-      context: .
+    image: ghcr.io/banstolabikash/bba.chrony:latest
     container_name: chrony
     network_mode: host
     restart: unless-stopped
+
     cap_add:
       - SYS_TIME
       - SYS_NICE
+
     volumes:
       # Keep the source configuration in Git and mount it read-only.
       - ./chrony.conf:/etc/chrony/chrony.conf:ro
