@@ -43,7 +43,7 @@ Runtime data and logs are not stored in the Git repository.
 Edit `chrony.conf` and change the permitted LAN subnet to match your network:
 
 ```conf
-allow 192.168.0.0/24
+allow 192.168.X.X/24
 ```
 
 Keep `allow 127.0.0.1` if local loopback clients need access.
