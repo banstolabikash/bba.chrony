@@ -1,0 +1,16 @@
+services:
+  chrony:
+    build:
+      context: .
+    container_name: chrony
+    network_mode: host
+    restart: unless-stopped
+    cap_add:
+      - SYS_TIME
+      - SYS_NICE
+    volumes:
+      # Keep the source configuration in Git and mount it read-only.
+      - ./chrony.conf:/etc/chrony/chrony.conf:ro
+      # Keep runtime state and logs outside the repository.
+      - /opt/chrony/data:/var/lib/chrony
+      - /opt/chrony/logs:/var/log/chrony

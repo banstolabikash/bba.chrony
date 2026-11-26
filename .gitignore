@@ -1,0 +1,14 @@
+# Runtime state and logs
+data/
+logs/
+*.log
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.DS_Store
+.vscode/
+.idea/
